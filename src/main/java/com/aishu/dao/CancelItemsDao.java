@@ -16,15 +16,13 @@ import com.aishu.util.ConnectionUtil;
 public class CancelItemsDao {
 	private final JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
-	public String cancelItem(Integer seatno, String message) {
+	public String cancelItem(Integer seatno) {
 		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("PR_CANCEL_ITEM").declareParameters(
 				new SqlParameter("SEATNUM", Types.INTEGER), new SqlOutParameter("MESSAGE", Types.VARCHAR));
-		// new SqlOutParameter("ERR", Types.BOOLEAN));
 		call.setAccessCallParameterMetaData(false);
 		SqlParameterSource in = new MapSqlParameterSource().addValue("SEATNUM", seatno);
 		Map<String, Object> execute = call.execute(in);
 		String status = (String) execute.get("MESSAGE");
-		// String error1 = (String) execute.get("ERR");
 
 		return status;
 
