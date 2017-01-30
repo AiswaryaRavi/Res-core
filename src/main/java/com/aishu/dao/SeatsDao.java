@@ -14,7 +14,7 @@ public class SeatsDao {
 	public void save(Seats seats) {
 
 		String sql = "insert into SEATS(ID,SEAT_NO,STATUS,CONCURRENT_USER_STATE) values(?,?,?)";
-		Object[] params = { seats.getId(), seats.getSeatstatus(), seats.getSeatNo(), seats.getStatus() };
+		Object[] params = { seats.getId(), seats.getSeat_Status(), seats.getSeat_No(), seats.getStatus() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows inserted: " + rows);
 
@@ -23,7 +23,7 @@ public class SeatsDao {
 	public void update(Seats seats) {
 
 		String sql = "update SEATS set CONCURRENT_USER_STATE=? where SEAT_NO=?";
-		Object[] params = { seats.getStatus(), seats.getSeatNo() };
+		Object[] params = { seats.getStatus(), seats.getSeat_No() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows updates: " + rows);
 	}
@@ -31,7 +31,7 @@ public class SeatsDao {
 	public void update1(Seats seats) {
 
 		String sql = "update SEATS set STATUS=? where SEAT_NO=?";
-		Object[] params = { seats.getSeatstatus(), seats.getSeatNo() };
+		Object[] params = { seats.getSeat_Status(), seats.getSeat_No() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows updates: " + rows);
 	}
@@ -49,8 +49,8 @@ public class SeatsDao {
 		return jdbcTemplate.query(sql, (rs, rowNum) -> {
 			Seats seats = new Seats();
 			seats.setId(rs.getInt("ID"));
-			seats.setSeatNo(rs.getInt("SEAT_NO"));
-			seats.setSeatstatus(rs.getString("STATUS"));
+			seats.setSeat_No(rs.getInt("SEAT_NO"));
+			seats.setSeat_Status(rs.getString("STATUS"));
 			seats.setStatus(rs.getBoolean("CONCURRENT_USER_STATE"));
 			return seats;
 
@@ -64,8 +64,8 @@ public class SeatsDao {
 		return jdbcTemplate.queryForObject(sql, params, (rs, rowNum) -> {
 			Seats seats = new Seats();
 			seats.setId(rs.getInt("ID"));
-			seats.setSeatNo(rs.getInt("SEAT_NO"));
-			seats.setSeatstatus(rs.getString("STATUS"));
+			seats.setSeat_No(rs.getInt("SEAT_NO"));
+			seats.setSeat_Status(rs.getString("STATUS"));
 			seats.setStatus(rs.getBoolean("CONCURRENT_USER_STATE"));
 			return seats;
 

@@ -12,20 +12,20 @@ public class TestSeatsDao {
 		Seats seats = new Seats();
 
 		// To insert into table
-		// seats.setId(11);
-		// seats.setSeatNo(11);
-		// seats.getSeatNo("AVAILABLE");
+		 seats.setId(11);
+		// seats.setSeat_No(11);
+		// seats.getSeat_No("AVAILABLE");
 		// seats.setStatus(false);
 		// seatsdao.save(seats);
 
 		// To update the table values
-		// seats.setSeatNo(3);
+		// seats.setSeat_No(3);
 		// seats.setStatus(false);
 		// seatsdao.update(seats);
 
 		// To update the table values
-		// seats.setSeatNo(3);
-		// seats.setSeatstatus("AVAILABLE");
+		// seats.setSeat_No(3);
+		// seats.setSeat_Status("AVAILABLE");
 		// seatsdao.update1(seats);
 
 		// To delete a particular record

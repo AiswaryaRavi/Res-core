@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.aishu.model.FoodTypes;
-import com.aishu.model.ItemSchedules;
 import com.aishu.model.MenuItems;
 import com.aishu.model.OrderRecords;
 import com.aishu.model.Orders;

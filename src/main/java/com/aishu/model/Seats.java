@@ -6,8 +6,8 @@ import lombok.Data;
 
 public class Seats {
 	private int Id;
-	private int SeatNo;
-	private String Seatstatus;
+	private int Seat_No;
+	private String Seat_Status;
 	private Boolean Status;
 
 }
