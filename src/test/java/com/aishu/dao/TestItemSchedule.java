@@ -22,15 +22,15 @@ public class TestItemSchedule {
 		foodtypes.setId(1);
 		menuitems.setId(15);
 
-		itemschedules.setFoodId(foodtypes);
-		itemschedules.setMenuId(menuitems);
+		itemschedules.setFood_id(foodtypes);
+		itemschedules.setMenu_id(menuitems);
 		itemschedules.setQuantity(100);
 		itemschedulesdao.save(itemschedules);
 
 		// to update Food_Id into table
 		itemschedules.setId(18);
 		foodtypes.setId(2);
-		itemschedules.setFoodId(foodtypes);
+		itemschedules.setFood_id(foodtypes);
 		itemschedulesdao.update(itemschedules);
 
 		// to update Quantity into table
@@ -52,8 +52,8 @@ public class TestItemSchedule {
 		Iterator<ItemSchedules> i = list.iterator();
 		while (i.hasNext()) {
 			ItemSchedules itemschedules1 = (ItemSchedules) i.next();
-			System.out.println(itemschedules1.getId() + "\t" + itemschedules1.getFoodId().getId() + "\t"
-					+ itemschedules1.getMenuId().getId() + "\t" + itemschedules1.getQuantity());
+			System.out.println(itemschedules1.getId() + "\t" + itemschedules1.getFood_id().getId() + "\t"
+					+ itemschedules1.getMenu_id().getId() + "\t" + itemschedules1.getQuantity());
 		}
 		//
 

@@ -16,7 +16,7 @@ public class ItemSchedulesDao {
 	public void save(ItemSchedules itemschedules) {
 
 		String sql = "insert into ITEM_SCHEDULES (FOOD_ID,MENU_ID,QUANTITY) values(?,?,?)";
-		Object[] params = { itemschedules.getFoodId().getId(), itemschedules.getMenuId().getId(),
+		Object[] params = { itemschedules.getFood_id().getId(), itemschedules.getMenu_id().getId(),
 				itemschedules.getQuantity() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows inserted: " + rows);
@@ -26,7 +26,7 @@ public class ItemSchedulesDao {
 	public void update(ItemSchedules itemschedules) {
 
 		String sql = "update ITEM_SCHEDULES set FOOD_ID=? where ID=?";
-		Object[] params = { itemschedules.getFoodId().getId(), itemschedules.getId() };
+		Object[] params = { itemschedules.getFood_id().getId(), itemschedules.getId() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows updates: " + rows);
 	}
@@ -34,7 +34,7 @@ public class ItemSchedulesDao {
 	public void update2(ItemSchedules itemschedules) {
 
 		String sql = "update ITEM_SCHEDULES set MENU_ID=? where ID=?";
-		Object[] params = { itemschedules.getMenuId().getId(), itemschedules.getId() };
+		Object[] params = { itemschedules.getMenu_id().getId(), itemschedules.getId() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows updates: " + rows);
 	}
@@ -62,11 +62,11 @@ public class ItemSchedulesDao {
 
 			FoodTypes foodtypes = new FoodTypes();
 			foodtypes.setId(rs.getInt("FOOD_ID"));
-			itemschedules.setFoodId(foodtypes);
+			itemschedules.setFood_id(foodtypes);
 
 			MenuItems menuitems = new MenuItems();
 			menuitems.setId(rs.getInt("MENU_ID"));
-			itemschedules.setMenuId(menuitems);
+			itemschedules.setMenu_id(menuitems);
 
 			itemschedules.setQuantity(rs.getInt("QUANTITY"));
 			return itemschedules;
@@ -84,11 +84,11 @@ public class ItemSchedulesDao {
 
 			FoodTypes foodtypes = new FoodTypes();
 			foodtypes.setId(rs.getInt("FOOD_ID"));
-			itemschedules.setFoodId(foodtypes);
+			itemschedules.setFood_id(foodtypes);
 
 			MenuItems menuitems = new MenuItems();
 			menuitems.setId(rs.getInt("MENU_ID"));
-			itemschedules.setMenuId(menuitems);
+			itemschedules.setMenu_id(menuitems);
 
 			itemschedules.setQuantity(rs.getInt("QUANTITY"));
 			return itemschedules;
