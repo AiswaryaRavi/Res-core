@@ -1,4 +1,5 @@
 package com.aishu.util;
+
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -20,4 +21,3 @@ public class ConnectionUtil {
 		return jt;
 	}
 }
-

@@ -1,4 +1,5 @@
 package com.aishu.model;
+
 import lombok.Data;
 
 @Data
