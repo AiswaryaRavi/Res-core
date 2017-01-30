@@ -5,9 +5,9 @@ import lombok.Data;
 @Data
 
 public class Seats {
-	private int Id;
-	private int Seat_No;
-	private String Seat_Status;
-	private Boolean Status;
+	private int id;
+	private int seat_no;
+	private String seat_status;
+	private Boolean status;
 
 }
