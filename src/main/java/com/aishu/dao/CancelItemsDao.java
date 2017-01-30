@@ -22,9 +22,7 @@ public class CancelItemsDao {
 		call.setAccessCallParameterMetaData(false);
 		SqlParameterSource in = new MapSqlParameterSource().addValue("SEATNUM", seatno);
 		Map<String, Object> execute = call.execute(in);
-		String status = (String) execute.get("MESSAGE");
-
-		return status;
+		return (String) execute.get("MESSAGE");
 
 	}
 }
