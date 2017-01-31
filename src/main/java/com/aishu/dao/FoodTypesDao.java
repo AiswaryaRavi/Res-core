@@ -66,10 +66,10 @@ public class FoodTypesDao {
 
 	}
 
-	public FoodTypes list2(int ID) {
+	public FoodTypes list2(int id) {
 
 		String sql = "select ID,TYPE_NAME,FROM_TIME,TO_TIME from FOOD_TYPES where ID=?";
-		Object[] params = { ID };
+		Object[] params = { id };
 
 		return jdbcTemplate.queryForObject(sql, params, (rs, rowNum) -> {
 			FoodTypes foodtypes = new FoodTypes();
