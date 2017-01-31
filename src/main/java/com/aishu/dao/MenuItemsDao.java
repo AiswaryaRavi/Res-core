@@ -19,7 +19,7 @@ public class MenuItemsDao {
 		String sql = "insert into MENU_ITEMS(ID,ITEM,RATE) values(?,?,?)";
 		Object[] params = { menuitems.getId(), menuitems.getItem(), menuitems.getRate() };
 		int rows = jdbcTemplate.update(sql, params);
-		logger.log(Level.INFO,"No of rows inserted: ", rows);
+		logger.log(Level.INFO, "No of rows inserted: ", rows);
 
 	}
 
@@ -28,14 +28,14 @@ public class MenuItemsDao {
 		String sql = "update MENU_ITEMS set ITEM=? where ID=?";
 		Object[] params = { menuitems.getItem(), menuitems.getId() };
 		int rows = jdbcTemplate.update(sql, params);
-		logger.log(Level.INFO,"No of rows updated: ", rows);
+		logger.log(Level.INFO, "No of rows updated: ", rows);
 	}
 
 	public void delete(MenuItems menuitems) {
 		String sql = "delete from MENU_ITEMS where ID=?";
 		Object[] params = { menuitems.getId() };
 		int rows = jdbcTemplate.update(sql, params);
-		logger.log(Level.INFO,"No of rows deleted: ", rows);
+		logger.log(Level.INFO, "No of rows deleted: ", rows);
 	}
 
 	public List<MenuItems> list() {
