@@ -24,10 +24,10 @@ public class TestOrderRecordsDao {
 		//
 		//
 		// orderrecords.setOrder_id(orders);;
-		orderrecords.setMenu_id(menuitems);
+		orderrecords.setMenuId(menuitems);
 		// orderrecords.setQuantity(10);
-		// orderrecords.setOrder_date(LocalDateTime.now());
-		// orderrecords.setOrder_track("ORDER DISPATCHED");
+		// orderrecords.setOrderDate(LocalDateTime.now());
+		// orderrecords.setOrderTrack("ORDER DISPATCHED");
 		 orderrecordsdao.save(orderrecords);
 
 		// TO AVOID DISPLAYING NULL VALUES ITERATOR IS USED
@@ -36,12 +36,12 @@ public class TestOrderRecordsDao {
 		// while(i.hasNext())
 		// {
 		// OrderRecords orderrecords1=(OrderRecords)i.next();
-		// System.out.println(orderrecords1.getId()+"\t"+orderrecords1.getOrder_id().getId()+"\t"+orderrecords1.getMenu_id().getId()+"\t"+orderrecords1.getQuantity()+"\t"+orderrecords1.getOrder_date()+"\t"+orderrecords1.getOrder_track());
+		// System.out.println(orderrecords1.getId()+"\t"+orderrecords1.getOrderId().getId()+"\t"+orderrecords1.getMenuId().getId()+"\t"+orderrecords1.getQuantity()+"\t"+orderrecords1.getOrderDate()+"\t"+orderrecords1.getOrderTrack());
 		// }
 
 		orderrecords = orderrecordsdao.listByQuantity(1);
 		System.out.println(
-				orderrecords.getId() + "\t" + orderrecords.getMenu_id().getId() + "\t" + orderrecords.getQuantity());
+				orderrecords.getId() + "\t" + orderrecords.getMenuId().getId() + "\t" + orderrecords.getQuantity());
 
 	}
 

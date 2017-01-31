@@ -14,7 +14,7 @@ public class TestOrdersDao {
 
 		// To insert into table
 		orders.setId(3);
-		// orders.setSeat_num(2);
+		// orders.setSeatNum(2);
 		// orders.setStatus("served");
 		// ordersdao.save(orders);
 

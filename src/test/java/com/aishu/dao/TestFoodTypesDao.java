@@ -11,9 +11,9 @@ public class TestFoodTypesDao {
 		FoodTypesDao foodtypesdao = new FoodTypesDao();
 		FoodTypes foodtypes = new FoodTypes();
 		foodtypes.setId(5);
-		// foodtypes.setType_name("BRUNCHT");
-		// foodtypes.setFrom_time(LocalTime.parse("10:20:00"));
-		// foodtypes.setTo_time(LocalTime.parse("14:00:00"));
+		// foodtypes.setTypeName("BRUNCHT");
+		// foodtypes.setFromTime(LocalTime.parse("10:20:00"));
+		// foodtypes.setToTime(LocalTime.parse("14:00:00"));
 
 		// foodtypesdao.save(foodtypes);
 		// foodtypesdao.update(foodtypes);

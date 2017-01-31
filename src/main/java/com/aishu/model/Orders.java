@@ -7,7 +7,7 @@ import lombok.Data;
 public class Orders {
 
 	private int id;
-	private int seat_num;
+	private int seatNum;
 	private String status;
 
 }

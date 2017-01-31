@@ -7,8 +7,8 @@ import java.time.LocalTime;
 public class FoodTypes {
 
 	private int id;
-	private String type_name;
-	private LocalTime from_time;
-	private LocalTime to_time;
+	private String typeName;
+	private LocalTime fromTime;
+	private LocalTime toTime;
 
 }

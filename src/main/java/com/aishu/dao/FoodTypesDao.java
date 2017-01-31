@@ -13,8 +13,8 @@ public class FoodTypesDao {
 	public void save(FoodTypes foodtypes) {
 
 		String sql = "insert into FOOD_TYPES(ID,TYPE_NAME,FROM_TIME,TO_TIME) values(?,?,?,?)";
-		Object[] params = { foodtypes.getId(), foodtypes.getType_name(), foodtypes.getFrom_time(),
-				foodtypes.getTo_time() };
+		Object[] params = { foodtypes.getId(), foodtypes.getTypeName(), foodtypes.getFromTime(),
+				foodtypes.getToTime() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows inserted: " + rows);
 
@@ -28,7 +28,7 @@ public class FoodTypesDao {
 	public void update(FoodTypes foodtypes) {
 
 		String sql = "update FOOD_TYPES set TYPE_NAME=? where ID=?";
-		Object[] params = { foodtypes.getType_name(), foodtypes.getId() };
+		Object[] params = { foodtypes.getTypeName(), foodtypes.getId() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows updates: " + rows);
 	}
@@ -46,9 +46,9 @@ public class FoodTypesDao {
 		return jdbcTemplate.query(sql, (rs, rowNum) -> {
 			FoodTypes foodtypes = new FoodTypes();
 			foodtypes.setId(rs.getInt("ID"));
-			foodtypes.setType_name(rs.getString("TYPE_NAME"));
-			foodtypes.setFrom_time(rs.getTime("FROM_TIME").toLocalTime());
-			foodtypes.setTo_time(rs.getTime("TO_TIME").toLocalTime());
+			foodtypes.setTypeName(rs.getString("TYPE_NAME"));
+			foodtypes.setFromTime(rs.getTime("FROM_TIME").toLocalTime());
+			foodtypes.setToTime(rs.getTime("TO_TIME").toLocalTime());
 			return foodtypes;
 
 		});
@@ -69,9 +69,9 @@ public class FoodTypesDao {
 		return jdbcTemplate.queryForObject(sql, params, (rs, rowNum) -> {
 			FoodTypes foodtypes = new FoodTypes();
 			foodtypes.setId(rs.getInt("ID"));
-			foodtypes.setType_name(rs.getString("TYPE_NAME"));
-			foodtypes.setFrom_time(rs.getTime("FROM_TIME").toLocalTime());
-			foodtypes.setTo_time(rs.getTime("TO_TIME").toLocalTime());
+			foodtypes.setTypeName(rs.getString("TYPE_NAME"));
+			foodtypes.setFromTime(rs.getTime("FROM_TIME").toLocalTime());
+			foodtypes.setToTime(rs.getTime("TO_TIME").toLocalTime());
 			return foodtypes;
 
 		});
