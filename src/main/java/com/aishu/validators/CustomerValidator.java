@@ -5,6 +5,10 @@ import com.aishu.model.MenuItems;
 import com.aishu.util.ValidatorUtil;
 
 public class CustomerValidator {
+	private CustomerValidator() {
+		throw new IllegalAccessError("Validator class");
+	}
+
 	public static void validateForInsert(MenuItems menu) throws ValidationException {
 
 		if (ValidatorUtil.isInvalidString(menu.getItem())) {
