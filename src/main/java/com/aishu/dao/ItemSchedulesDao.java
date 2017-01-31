@@ -1,6 +1,8 @@
 package com.aishu.dao;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -12,6 +14,9 @@ import com.aishu.util.ConnectionUtil;
 public class ItemSchedulesDao {
 
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+	Logger logger = Logger.getLogger(ItemSchedulesDao.class.getName());
+	static final String MSG = "No. of rows updated ";
+
 
 	public void save(ItemSchedules itemschedules) {
 
@@ -19,7 +24,8 @@ public class ItemSchedulesDao {
 		Object[] params = { itemschedules.getFoodId().getId(), itemschedules.getMenuId().getId(),
 				itemschedules.getQuantity() };
 		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows inserted: " + rows);
+		logger.log(Level.INFO,"No of rows inserted", rows);
+
 
 	}
 
@@ -28,7 +34,8 @@ public class ItemSchedulesDao {
 		String sql = "update ITEM_SCHEDULES set FOOD_ID=? where ID=?";
 		Object[] params = { itemschedules.getFoodId().getId(), itemschedules.getId() };
 		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows updates: " + rows);
+		logger.log(Level.INFO,MSG, rows);
+
 	}
 
 	public void update2(ItemSchedules itemschedules) {
@@ -36,7 +43,8 @@ public class ItemSchedulesDao {
 		String sql = "update ITEM_SCHEDULES set MENU_ID=? where ID=?";
 		Object[] params = { itemschedules.getMenuId().getId(), itemschedules.getId() };
 		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows updates: " + rows);
+		logger.log(Level.INFO,MSG, rows);
+
 	}
 
 	public void update1(ItemSchedules itemschedules) {
@@ -44,13 +52,15 @@ public class ItemSchedulesDao {
 		String sql = "update ITEM_SCHEDULES set QUANTITY=? where ID=?";
 		Object[] params = { itemschedules.getQuantity(), itemschedules.getId() };
 		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows updates: " + rows);
+		logger.log(Level.INFO,MSG, rows);
+
 	}
 
 	public void delete(int id) {
 		String sql = "delete from ITEM_SCHEDULES where ID=?";
 		int rows = jdbcTemplate.update(sql, id);
-		System.out.println("No of rows deleted: " + rows);
+		logger.log(Level.INFO,"No of rows deleted", rows);
+
 	}
 
 	public List<ItemSchedules> list() {
