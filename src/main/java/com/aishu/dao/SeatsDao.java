@@ -15,8 +15,7 @@ public class SeatsDao {
 
 		String sql = "insert into SEATS(ID,SEAT_NO,STATUS,CONCURRENT_USER_STATE) values(?,?,?)";
 		Object[] params = { seats.getId(), seats.getSeatStatus(), seats.getSeatNo(), seats.getStatus() };
-		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows inserted: " + rows);
+		jdbcTemplate.update(sql, params);
 
 	}
 
@@ -24,23 +23,20 @@ public class SeatsDao {
 
 		String sql = "update SEATS set CONCURRENT_USER_STATE=? where SEAT_NO=?";
 		Object[] params = { seats.getStatus(), seats.getSeatNo() };
-		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows updates: " + rows);
+		jdbcTemplate.update(sql, params);
 	}
 
 	public void update1(Seats seats) {
 
 		String sql = "update SEATS set STATUS=? where SEAT_NO=?";
 		Object[] params = { seats.getSeatStatus(), seats.getSeatNo() };
-		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows updates: " + rows);
+		jdbcTemplate.update(sql, params);
 	}
 
 	public void delete(Seats seats) {
 		String sql = "delete from SEATS where ID=?";
 		Object[] params = { seats.getId() };
-		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows deleted: " + rows);
+		jdbcTemplate.update(sql, params);
 	}
 
 	public List<Seats> list() {

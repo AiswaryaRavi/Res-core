@@ -13,15 +13,15 @@ public class Ordersdao {
 	public void save(Orders orders) {
 		String sql = "INSERT INTO ORDERS(ID,SEAT_NUM,STATUS)VALUES(?,?,?)";
 		Object[] params = { orders.getId(), orders.getSeatNum(), orders.getStatus() };
-		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows inserted: " + rows);
+		jdbcTemplate.update(sql, params);
+		
 	}
 
 	public void update(Orders orders) {
 		String sql = "UPDATE ORDERS SET STATUS=? WHERE ID=?";
 		Object[] params = { orders.getStatus(), orders.getId() };
-		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows updated: " + rows);
+		jdbcTemplate.update(sql, params);
+		
 
 	}
 

@@ -18,8 +18,7 @@ public class OrderRecordsDao {
 		String sql = "insert into ORDER_RECORDS(ORDER_ID,MENU_ID,QUANTITY,ORDER_DATE,ORDER_TRACK) values(?,?,?,?,?)";
 		Object[] params = { orderrecords.getOrderId().getId(), orderrecords.getMenuId().getId(),
 				orderrecords.getQuantity(), orderrecords.getOrderDate(), orderrecords.getOrderTrack() };
-		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows inserted: " + rows);
+		jdbcTemplate.update(sql, params);
 
 	}
 
