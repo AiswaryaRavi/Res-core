@@ -1,6 +1,8 @@
 package com.aishu.dao;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -9,6 +11,7 @@ import com.aishu.util.ConnectionUtil;
 
 public class FoodTypesDao {
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+	Logger logger = Logger.getLogger(FoodTypesDao.class.getName());
 
 	public void save(FoodTypes foodtypes) {
 
@@ -16,7 +19,7 @@ public class FoodTypesDao {
 		Object[] params = { foodtypes.getId(), foodtypes.getTypeName(), foodtypes.getFromTime(),
 				foodtypes.getToTime() };
 		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows inserted: " + rows);
+		logger.log(Level.INFO,"No of rows inserted", rows);
 
 	}
 
@@ -30,14 +33,16 @@ public class FoodTypesDao {
 		String sql = "update FOOD_TYPES set TYPE_NAME=? where ID=?";
 		Object[] params = { foodtypes.getTypeName(), foodtypes.getId() };
 		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows updates: " + rows);
+		logger.log(Level.INFO,"No of rows updated", rows);
+
 	}
 
 	public void delete(FoodTypes foodtypes) {
 		String sql = "delete from FOOD_TYPES where ID=?";
 		Object[] params = { foodtypes.getId() };
 		int rows = jdbcTemplate.update(sql, params);
-		System.out.println("No of rows deleted: " + rows);
+		logger.log(Level.INFO,"No of rows deleted", rows);
+
 	}
 
 	public List<FoodTypes> list() {

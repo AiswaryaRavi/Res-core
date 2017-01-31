@@ -18,27 +18,27 @@ public class TestItemSchedule {
 		ItemSchedules itemschedules = new ItemSchedules();
 
 		// TO INSERT INTO TABLE
-		itemschedules.setId(18);
-		foodtypes.setId(1);
-		menuitems.setId(15);
-
-		itemschedules.setFoodId(foodtypes);
-		itemschedules.setMenuId(menuitems);
-		itemschedules.setQuantity(100);
-		itemschedulesdao.save(itemschedules);
+//		itemschedules.setId(18);
+//		foodtypes.setId(1);
+//		menuitems.setId(15);
+//
+//		itemschedules.setFoodId(foodtypes);
+//		itemschedules.setMenuId(menuitems);
+//		itemschedules.setQuantity(100);
+//		itemschedulesdao.save(itemschedules);
 
 		// to update Food_Id into table
-		itemschedules.setId(18);
-		foodtypes.setId(2);
-		itemschedules.setFoodId(foodtypes);
-		itemschedulesdao.update(itemschedules);
+//		itemschedules.setId(18);
+//		foodtypes.setId(2);
+//		itemschedules.setFoodId(foodtypes);
+//		itemschedulesdao.update(itemschedules);
 
 		// to update Quantity into table
-		itemschedules.setQuantity(120);
-		itemschedulesdao.update1(itemschedules);
+//		itemschedules.setQuantity(120);
+//		itemschedulesdao.update1(itemschedules);
 
 		// to delete row from a table
-		itemschedulesdao.delete(17);
+		//itemschedulesdao.delete(17);
 
 		// It Displays null values for column which are not foreign key
 		//// List<ItemSchedules> list=itemschedulesdao.list();

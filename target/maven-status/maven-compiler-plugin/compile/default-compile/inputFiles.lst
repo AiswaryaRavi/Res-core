@@ -3,8 +3,8 @@ C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\dao\FoodTypesDao.java
 C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\model\MenuItems.java
 C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\dao\Ordersdao.java
 C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\dao\ItemSchedulesDao.java
-C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\Validator\ItemValidator.java
-C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\Exception\ItemNotFoundexception.java
+C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\validators\ItemValidator.java
+C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\exception\ItemNotFoundexception.java
 C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\util\ConnectionUtil.java
 C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\dao\CancelItemsDao.java
 C:\Users\Aiswarya\git\res-core\src\main\java\com\aishu\model\ItemSchedules.java
