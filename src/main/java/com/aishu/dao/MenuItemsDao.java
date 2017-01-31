@@ -55,10 +55,10 @@ public class MenuItemsDao {
 
 	}
 
-	public MenuItems list2(int ID) {
+	public MenuItems list2(int id) {
 
 		String sql = "select ID,ITEM,RATE from MENU_ITEMS where ID=?";
-		Object[] params = { ID };
+		Object[] params = { id };
 
 		return jdbcTemplate.queryForObject(sql, params, (rs, rowNum) -> {
 
