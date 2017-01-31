@@ -1,5 +1,7 @@
 package com.aishu.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -26,24 +28,28 @@ public class OrderRecordsDao {
 
 		String sql = "select ID,ORDER_ID,MENU_ID,QUANTITY,ORDER_DATE,ORDER_TRACK FROM ORDER_RECORDS";
 		return jdbcTemplate.query(sql, (rs, rowNum) -> {
-			OrderRecords orderrecords = new OrderRecords();
-			orderrecords.setId(rs.getInt("ID"));
-
-			Orders orders = new Orders();
-			orders.setId(rs.getInt("ORDER_ID"));
-			orderrecords.setOrderId(orders);
-
-			MenuItems menuitems = new MenuItems();
-			menuitems.setId(rs.getInt("MENU_ID"));
-			orderrecords.setMenuId(menuitems);
-
-			orderrecords.setQuantity(rs.getInt("QUANTITY"));
-			orderrecords.setOrderDate(rs.getTimestamp("ORDER_DATE").toLocalDateTime());
-			orderrecords.setOrderTrack(rs.getString("ORDER_TRACK"));
-
-			return orderrecords;
+			return convert(rs);
 
 		});
+	}
+
+	private OrderRecords convert(ResultSet rs) throws SQLException {
+		OrderRecords orderrecords = new OrderRecords();
+		orderrecords.setId(rs.getInt("ID"));
+
+		Orders orders = new Orders();
+		orders.setId(rs.getInt("ORDER_ID"));
+		orderrecords.setOrderId(orders);
+
+		MenuItems menuitems = new MenuItems();
+		menuitems.setId(rs.getInt("MENU_ID"));
+		orderrecords.setMenuId(menuitems);
+
+		orderrecords.setQuantity(rs.getInt("QUANTITY"));
+		orderrecords.setOrderDate(rs.getTimestamp("ORDER_DATE").toLocalDateTime());
+		orderrecords.setOrderTrack(rs.getString("ORDER_TRACK"));
+
+		return orderrecords;
 	}
 
 	public OrderRecords listByQuantity(int id) {

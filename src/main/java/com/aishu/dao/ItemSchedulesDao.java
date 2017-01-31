@@ -1,5 +1,7 @@
 package com.aishu.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -67,21 +69,25 @@ public class ItemSchedulesDao {
 
 		String sql = "select ID,FOOD_ID,MENU_ID,QUANTITY from ITEM_SCHEDULES";
 		return jdbcTemplate.query(sql, (rs, rowNum) -> {
-			ItemSchedules itemschedules = new ItemSchedules();
-			itemschedules.setId(rs.getInt("ID"));
-
-			FoodTypes foodtypes = new FoodTypes();
-			foodtypes.setId(rs.getInt("FOOD_ID"));
-			itemschedules.setFoodId(foodtypes);
-
-			MenuItems menuitems = new MenuItems();
-			menuitems.setId(rs.getInt("MENU_ID"));
-			itemschedules.setMenuId(menuitems);
-
-			itemschedules.setQuantity(rs.getInt("QUANTITY"));
-			return itemschedules;
+			return convert(rs);
 
 		});
+	}
+
+	private ItemSchedules convert(ResultSet rs) throws SQLException {
+		ItemSchedules itemschedules = new ItemSchedules();
+		itemschedules.setId(rs.getInt("ID"));
+
+		FoodTypes foodtypes = new FoodTypes();
+		foodtypes.setId(rs.getInt("FOOD_ID"));
+		itemschedules.setFoodId(foodtypes);
+
+		MenuItems menuitems = new MenuItems();
+		menuitems.setId(rs.getInt("MENU_ID"));
+		itemschedules.setMenuId(menuitems);
+
+		itemschedules.setQuantity(rs.getInt("QUANTITY"));
+		return itemschedules;
 	}
 
 	public ItemSchedules listById(int id) {
@@ -89,19 +95,7 @@ public class ItemSchedulesDao {
 		Object[] params = { id };
 
 		return jdbcTemplate.queryForObject(sql, params, (rs, rowNum) -> {
-			ItemSchedules itemschedules = new ItemSchedules();
-			itemschedules.setId(rs.getInt("ID"));
-
-			FoodTypes foodtypes = new FoodTypes();
-			foodtypes.setId(rs.getInt("FOOD_ID"));
-			itemschedules.setFoodId(foodtypes);
-
-			MenuItems menuitems = new MenuItems();
-			menuitems.setId(rs.getInt("MENU_ID"));
-			itemschedules.setMenuId(menuitems);
-
-			itemschedules.setQuantity(rs.getInt("QUANTITY"));
-			return itemschedules;
+			return convert(rs);
 
 		});
 	}
