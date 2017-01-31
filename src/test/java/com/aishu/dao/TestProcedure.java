@@ -17,7 +17,7 @@ public class TestProcedure {
 		// LocalTime time = LocalTime.now();
 		// String timeForm = formatter.format(time);
 
-		String status = dao.placeOrder("COFFE,TEA,TEA", "2,1,2", "1", "@MESSAGE");
+		String status = dao.placeOrder("COFFE,TEA,TEA", "2,1,2", "1");
 		System.out.println(status);
 
 	}
