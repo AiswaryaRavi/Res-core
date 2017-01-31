@@ -20,14 +20,12 @@ public class TakeOrderProcedureDao {
 				new SqlParameter("ITEM_LISTS", Types.LONGVARCHAR),
 				new SqlParameter("ITEM_QUANTITY", Types.LONGNVARCHAR), new SqlParameter("SEAT_NUMB", Types.VARCHAR),
 				new SqlOutParameter("MESSAGE", Types.VARCHAR));
-		// new SqlOutParameter("ERR", Types.BOOLEAN));
+
 		call.setAccessCallParameterMetaData(false);
 		SqlParameterSource in = new MapSqlParameterSource().addValue("ITEM_LISTS", items)
 				.addValue("ITEM_QUANTITY", quantity).addValue("SEAT_NUMB", seatno);
 		Map<String, Object> execute = call.execute(in);
 		return (String) execute.get("MESSAGE");
-		// String error1 = (String) execute.get("ERR");
-
 
 	}
 }
