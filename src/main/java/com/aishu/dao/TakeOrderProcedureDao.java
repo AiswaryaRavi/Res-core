@@ -25,10 +25,9 @@ public class TakeOrderProcedureDao {
 		SqlParameterSource in = new MapSqlParameterSource().addValue("ITEM_LISTS", items)
 				.addValue("ITEM_QUANTITY", quantity).addValue("SEAT_NUMB", seatno);
 		Map<String, Object> execute = call.execute(in);
-		String status = (String) execute.get("MESSAGE");
+		return (String) execute.get("MESSAGE");
 		// String error1 = (String) execute.get("ERR");
 
-		return status;
 
 	}
 }
