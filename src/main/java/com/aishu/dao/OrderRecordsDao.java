@@ -27,10 +27,8 @@ public class OrderRecordsDao {
 	public List<OrderRecords> list() {
 
 		String sql = "select ID,ORDER_ID,MENU_ID,QUANTITY,ORDER_DATE,ORDER_TRACK FROM ORDER_RECORDS";
-		return jdbcTemplate.query(sql, (rs, rowNum) -> {
-			return convert(rs);
-
-		});
+		return jdbcTemplate.query(sql, (rs, rowNum) -> convert(rs));
+		
 	}
 
 	private OrderRecords convert(ResultSet rs) throws SQLException {

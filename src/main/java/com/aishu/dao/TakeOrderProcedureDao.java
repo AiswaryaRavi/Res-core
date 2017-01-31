@@ -15,7 +15,7 @@ import com.aishu.util.ConnectionUtil;
 public class TakeOrderProcedureDao {
 	private final JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
-	public String placeOrder(String items, String quantity, String seatno, String message) {
+	public String placeOrder(String items, String quantity, String seatno) {
 		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("PR_TAKEORDER").declareParameters(
 				new SqlParameter("ITEM_LISTS", Types.LONGVARCHAR),
 				new SqlParameter("ITEM_QUANTITY", Types.LONGNVARCHAR), new SqlParameter("SEAT_NUMB", Types.VARCHAR),
