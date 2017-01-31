@@ -50,7 +50,7 @@ public class SeatsDao {
 			Seats seats = new Seats();
 			seats.setId(rs.getInt("ID"));
 			seats.setSeat_no(rs.getInt("SEAT_NO"));
-			seats.setSeat_status(rs.getString("STATUS"));
+			seats.setSeat_Status(rs.getString("STATUS"));
 			seats.setStatus(rs.getBoolean("CONCURRENT_USER_STATE"));
 			return seats;
 
@@ -65,7 +65,7 @@ public class SeatsDao {
 			Seats seats = new Seats();
 			seats.setId(rs.getInt("ID"));
 			seats.setSeat_no(rs.getInt("SEAT_NO"));
-			seats.setSeat_status(rs.getString("STATUS"));
+			seats.setSeat_Status(rs.getString("STATUS"));
 			seats.setStatus(rs.getBoolean("CONCURRENT_USER_STATE"));
 			return seats;
 

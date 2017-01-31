@@ -25,7 +25,7 @@ public class TestSeatsDao {
 
 		// To update the table values
 		// seats.setSeat_no(3);
-		// seats.setSeat_status("AVAILABLE");
+		// seats.setSeat_Status("AVAILABLE");
 		// seatsdao.update1(seats);
 
 		// To delete a particular record
