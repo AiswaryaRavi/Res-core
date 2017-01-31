@@ -1,7 +1,7 @@
 package com.aishu.dao;
 
-import com.aishu.Validator.ItemValidator;
 import com.aishu.model.MenuItems;
+import com.aishu.validators.ItemValidator;
 
 public class Testvalidator {
 

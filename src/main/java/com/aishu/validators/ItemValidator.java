@@ -1,6 +1,6 @@
-package com.aishu.Validator;
+package com.aishu.validators;
 
-import com.aishu.Exception.ItemNotFoundexception;
+import com.aishu.exception.ItemNotFoundexception;
 import com.aishu.model.MenuItems;
 
 public class ItemValidator {

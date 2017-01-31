@@ -1,4 +1,4 @@
-package com.aishu.Exception;
+package com.aishu.exception;
 
 public class ItemNotFoundexception extends Exception {
 
