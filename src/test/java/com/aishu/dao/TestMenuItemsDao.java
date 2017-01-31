@@ -17,11 +17,11 @@ public class TestMenuItemsDao {
 		// menuitemsdao.save(menuitems);
 		// menuitemsdao.update(menuitems);
 		menuitemsdao.delete(menuitems);
-		// List<MenuItems> list=menuitemsdao.list();
-		// for(MenuItems i:list)
-		// {
-		// System.out.println(i);
-		// }
+		 List<MenuItems> list=menuitemsdao.list();
+		 for(MenuItems i:list)
+		 {
+		 System.out.println(i);
+		 }
 		// System.out.println(menuitemsdao.list1());
 		// List<String> list1=menuitemsdao.list1();
 		// for(String i:list1)

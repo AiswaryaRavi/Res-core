@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class MenuItems {
-	private int Id;
-	private String Item;
-	private int Rate;
+	private int id;
+	private String item;
+	private int rate;
 
 }

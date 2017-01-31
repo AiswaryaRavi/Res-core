@@ -16,8 +16,8 @@ public class OrderRecordsDao {
 	public void save(OrderRecords orderrecords) {
 
 		String sql = "insert into ORDER_RECORDS(ORDER_ID,MENU_ID,QUANTITY,ORDER_DATE,ORDER_TRACK) values(?,?,?,?,?)";
-		Object[] params = { orderrecords.getOrderId().getId(), orderrecords.getMenuId().getId(),
-				orderrecords.getQuantity(), orderrecords.getOrderDate(), orderrecords.getOrderTrack() };
+		Object[] params = { orderrecords.getOrder_id().getId(), orderrecords.getMenu_id().getId(),
+				orderrecords.getQuantity(), orderrecords.getOrder_date(), orderrecords.getOrder_track() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows inserted: " + rows);
 
@@ -32,15 +32,15 @@ public class OrderRecordsDao {
 
 			Orders orders = new Orders();
 			orders.setId(rs.getInt("ORDER_ID"));
-			orderrecords.setOrderId(orders);
+			orderrecords.setOrder_id(orders);
 
 			MenuItems menuitems = new MenuItems();
 			menuitems.setId(rs.getInt("MENU_ID"));
-			orderrecords.setMenuId(menuitems);
+			orderrecords.setMenu_id(menuitems);
 
 			orderrecords.setQuantity(rs.getInt("QUANTITY"));
-			orderrecords.setOrderDate(rs.getTimestamp("ORDER_DATE").toLocalDateTime());
-			orderrecords.setOrderTrack(rs.getString("ORDER_TRACK"));
+			orderrecords.setOrder_date(rs.getTimestamp("ORDER_DATE").toLocalDateTime());
+			orderrecords.setOrder_track(rs.getString("ORDER_TRACK"));
 
 			return orderrecords;
 
@@ -57,7 +57,7 @@ public class OrderRecordsDao {
 
 			MenuItems menuitems = new MenuItems();
 			menuitems.setId(rs.getInt("MENU_ID"));
-			orderrecords.setMenuId(menuitems);
+			orderrecords.setMenu_id(menuitems);
 
 			orderrecords.setQuantity(rs.getInt("QUANTITY"));
 			return orderrecords;

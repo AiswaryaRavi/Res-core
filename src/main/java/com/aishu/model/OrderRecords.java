@@ -8,11 +8,11 @@ import lombok.Data;
 
 public class OrderRecords {
 
-	private int Id;
-	private Orders OrderId;
-	private MenuItems MenuId;
-	private int Quantity;
-	private LocalDateTime OrderDate;
-	private String OrderTrack;
+	private int id;
+	private Orders order_id;
+	private MenuItems menu_id;
+	private int quantity;
+	private LocalDateTime order_date;
+	private String order_track;
 
 }

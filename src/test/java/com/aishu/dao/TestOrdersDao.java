@@ -13,8 +13,8 @@ public class TestOrdersDao {
 		Orders orders = new Orders();
 
 		// To insert into table
-		// orders.setId(3);
-		// orders.setSeatNum(2);
+		orders.setId(3);
+		// orders.setSeat_num(2);
 		// orders.setStatus("served");
 		// ordersdao.save(orders);
 
@@ -24,11 +24,10 @@ public class TestOrdersDao {
 		// ordersdao.update(orders);
 
 		// TO display the whole table
-		// List<Orders> list=ordersdao.list();
-		// for(Orders i:list)
-		// {
-		// System.out.println(i);
-		// }
+		List<Orders> list = ordersdao.list();
+		for (Orders i : list) {
+			System.out.println(i);
+		}
 
 		// To display one record
 		System.out.println(ordersdao.list1(1));

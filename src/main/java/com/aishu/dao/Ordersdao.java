@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.aishu.model.Orders;
-import com.aishu.model.Seats;
 import com.aishu.util.ConnectionUtil;
 
 public class Ordersdao {
@@ -13,7 +12,7 @@ public class Ordersdao {
 
 	public void save(Orders orders) {
 		String sql = "INSERT INTO ORDERS(ID,SEAT_NUM,STATUS)VALUES(?,?,?)";
-		Object[] params = { orders.getId(), orders.getSeatNum(), orders.getStatus() };
+		Object[] params = { orders.getId(), orders.getSeat_num(), orders.getStatus() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows inserted: " + rows);
 	}
@@ -32,7 +31,7 @@ public class Ordersdao {
 		return jdbcTemplate.query(sql, (rs, rowNum) -> {
 			Orders orders = new Orders();
 			orders.setId(rs.getInt("ID"));
-			orders.setSeatNum(rs.getInt("SEAT_NUM"));
+			orders.setSeat_num(rs.getInt("SEAT_NUM"));
 			orders.setStatus(rs.getString("STATUS"));
 			return orders;
 
@@ -46,7 +45,7 @@ public class Ordersdao {
 		return jdbcTemplate.queryForObject(sql, params, (rs, rowNum) -> {
 			Orders orders = new Orders();
 			orders.setId(rs.getInt("ID"));
-			orders.setSeatNum(rs.getInt("SEAT_NUM"));
+			orders.setSeat_num(rs.getInt("SEAT_NUM"));
 			orders.setStatus(rs.getString("STATUS"));
 			return orders;
 

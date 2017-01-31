@@ -6,7 +6,7 @@ import lombok.Data;
 
 public class ItemSchedules {
 
-	private int Id;
+	private int id;
 	private FoodTypes food_id;
 	private MenuItems menu_id;
 	private int quantity;
