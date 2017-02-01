@@ -2,6 +2,8 @@ package com.aishu.validators;
 
 import com.aishu.dao.MenuItemsDao;
 import com.aishu.exception.ValidationException;
+import com.aishu.validators.ServiceException;
+
 import com.aishu.model.MenuItems;
 
 public class CustomerService {
@@ -15,7 +17,6 @@ public class CustomerService {
 			menuitemsdao.save(m);
 
 		} catch (ValidationException e) {
-			e.printStackTrace();
 			throw new ServiceException("Unable to insert Item", e);
 		}
 	}
@@ -25,7 +26,6 @@ public class CustomerService {
 			CustomerValidator.validatorForDelete(m);
 			menuitemsdao.delete(m);
 		} catch (ValidationException e) {
-			e.printStackTrace();
 			throw new ServiceException("Unable to delete Item", e);
 		}
 
@@ -36,7 +36,6 @@ public class CustomerService {
 			CustomerValidator.validatorForUpdate(m);
 			menuitemsdao.delete(m);
 		} catch (ValidationException e) {
-			e.printStackTrace();
 			throw new ServiceException("Unable to update Item", e);
 		}
 
